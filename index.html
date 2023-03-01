@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        main{
+            display: flex !important;
+        }
+        .area-calculation .card-title{
+            border-bottom: 2px solid black !important;
+            border-style: outset !important;
+        }
+        .card-area{
+            border: 2px solid #ebebeb;
+            border-radius:5px;
+            box-shadow: 5px 5px 5px #ebebeb;
+            
+        }
+        .list{
+            display: flex;
+        }
+        .list input{
+            height: 40px;
+            width: 70px;
+        }
+        #list-1,#list-2,#list-3,#list-4,#list-5,#list-6{
+            display: none;
+        }
+        @media screen and (max-width: 800px) {
+
+            main{
+                display: flex;
+                flex-direction: column;
+            }
+            .btn {
+                font-size:0.875em;
+                display:block;
+                left:-60px;
+                margin-top:35px;
+                width:100%;
+            }
+            .area-calculation{
+                box-sizing: border-box; 
+                width: 80%;
+                /* padding-left: 10%; */
+                padding-right: 10%;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            .list button{
+            margin-top: 0px;
+        }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-white">
+            <div class="container-fluid mx-5 my-5 rounded bg-dark bg-gradient">
+                <div>
+                    <a class="navbar-brand fs-1 fw-bolder text-white">Interactive</a>
+                    <p class="fs-3 text-secondary">Geometry Genius</p>
+                </div>
+                <form class="d-flex" role="search">
+                    <button id="btn-blog" type="button" class="btn btn-primary btn-lg px-5" onclick="window.location.href='blog.html';">Blog</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="mx-5 mb-5">
+        <section class="shape-of-you">
+            <div class="row row-cols-1 row-cols-md-3 g-4 me-2">
+                <div id="card-1" class="col">
+                    <div class="card card1 h-100 px-5 py-5">
+                        <img src="images/triangle.png" class="card-img-top w-75 mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mt-4">Triangle</h5>
+                            <p class="card-text text-center">Area (A) = 0.5 x b x h</p>
+                            <div class="input-group mb-3 mt-2">
+                                <input id="triangle-b" type="number" class="form-control" placeholder="b" aria-label="b">
+                                <span class="input-group-text">cm</span>
+                                <input id="triangle-h" type="number" class="form-control" placeholder="h" aria-label="h">
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                            <button id="btn-triangle" type="button" class="btn btn-primary btn-lg px-5">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-2" class="col">
+                    <div class="card card2 h-100 px-5 py-5">
+                        <img src="images/rectangle.png" class="card-img-top w-75 mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mt-5">Rectangle</h5>
+                            <p class="card-text text-center">Area (A) = w x l</p>
+                            <div class="input-group mb-3">
+                                <input id="rectangle-w" type="number" class="form-control" placeholder="w" aria-label="w">
+                                <span class="input-group-text">cm</span>
+                                <input id="rectangle-l" type="number" class="form-control" placeholder="l" aria-label="l">
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                            <button id="btn-rectangle" type="button" class="btn btn-primary btn-lg px-5">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-3" class="col">
+                    <div class="card card3 h-100 px-5 py-5">
+                        <img src="images/parallelogram.png" class="card-img-top w-75 mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mt-5">Parallelogram</h5>
+                            <p class="card-text text-center mb-4">Area (A) = b x h</p>
+                            <div class="input-group mb-3 mt-4">
+                                <input id="parallelogram-b" type="number" class="form-control" placeholder="b" aria-label="h">
+                                <span class="input-group-text">cm</span>
+                                <input id="parallelogram-h" type="number" class="form-control" placeholder="h" aria-label="h">
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                            <button id="btn-parallelogram" type="button" class="btn btn-primary btn-lg px-5">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-4" class="col">
+                    <div class="card card4 h-100 px-5 py-5">
+                        <img src="images/rhombus.png" class="card-img-top w-75 mx-auto" alt="...">
+                        <div class="card-body mt-5">
+                            <h5 class="card-title text-center">Rhombus</h5>
+                            <p class="card-text text-center">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></p>
+                            <div class="input-group mb-3">
+                                <input id="rhombus-d1" type="number" class="form-control" placeholder="d-1" aria-label="d-1">
+                                <span class="input-group-text">cm</span>
+                                <input id="rhombus-d2" type="number" class="form-control" placeholder="d-2" aria-label="d-2">
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                            <button id="btn-rhombus" type="button" class="btn btn-primary btn-lg px-5">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-5" class="col">
+                    <div class="card card5 h-100 px-5 py-5">
+                        <img src="images/pentagon.png" class="card-img-top w-50 mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mt-5 pt-4">Pentagon</h5>
+                            <p class="card-text text-center">Area (A) = 0.5 x p x b</p>
+                            <div class="input-group mb-3">
+                                <input id="pentagon-p" type="number" class="form-control" placeholder="p" aria-label="p">
+                                <span class="input-group-text">cm</span>
+                                <input id="pentagon-b" type="number" class="form-control" placeholder="b" aria-label="b">
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                            <button id="btn-pentagon" type="button" class="btn btn-primary btn-lg px-5">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-6" class="col">
+                    <div class="card card6 h-100 px-5 py-5">
+                        <img src="images/ellipse.png" class="card-img-top w-75 mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mt-5 pt-4">Ellipse</h5>
+                            <p class="card-text text-center mb-4">Area (A) =<span>&#960;</span>ab</p>
+                            <div class="input-group mb-3 mt-4">
+                                <input id="ellipse-a" type="number" class="form-control" placeholder="a" aria-label="a">
+                                <span class="input-group-text">cm</span>
+                                <input id="ellipse-b" type="number" class="form-control" placeholder="b" aria-label="b">
+                                <span class="input-group-text">cm</span>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                            <button id="btn-ellipse" type="button" class="btn btn-primary btn-lg px-5">Calculate</button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <section class="area-calculation">
+            <div class="card-area" style="width: 18rem; height: 30rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Area Calculation</h5>
+                    <p id="list-1" class="list">
+                        1.Triangle
+                        <input id="triangle-value" type="number" class="form-control">
+                        <span>cm<sup>2</sup></span>
+                        <button id="btn-ellipse" type="button" class="btn btn-primary btn-sm">Convert To m<sup>2</sup></button>
+                    </p>
+                    <p id="list-2" class="list">
+                        2.Rectangle
+                        <input id="rectangle-value" type="number" class="form-control">
+                        <span>cm<sup>2</sup></span>
+                        <button id="btn-ellipse" type="button" class="btn btn-primary btn-sm">Convert To m<sup>2</sup></button>
+                    </p>
+                    <p id="list-3" class="list">
+                        3.Parallelogram
+                        <input id="parallelogram-value" type="number" class="form-control">
+                        <span>cm<sup>2</sup></span>
+                        <button id="btn-ellipse" type="button" class="btn btn-primary btn-sm">Convert To m<sup>2</sup></button>
+                    </p>
+                    <p id="list-4" class="list">
+                        4.Rhombus
+                        <input id="rhombus-value" type="number" class="form-control">
+                        <span>cm<sup>2</sup></span>
+                        <button id="btn-ellipse" type="button" class="btn btn-primary btn-sm">Convert To m<sup>2</sup></button>
+                    </p>
+                    <p id="list-5" class="list">
+                        5.Pentagon
+                        <input id="pentagon-value" type="number" class="form-control">
+                        <span>cm<sup>2</sup></span>
+                        <button id="btn-ellipse" type="button" class="btn btn-primary btn-sm">Convert To m<sup>2</sup></button>
+                    </p>
+                    <p id="list-6" class="list">
+                        6.Ellipse
+                        <input id="ellipse-value" type="number" class="form-control">
+                        <span>cm<sup>2</sup></span>
+                        <button id="btn-ellipse" type="button" class="btn btn-primary btn-sm">Convert To m<sup>2</sup></button>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script src="js/calculate.js"></script>
+</body>
+</html>

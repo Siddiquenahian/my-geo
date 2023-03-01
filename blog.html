@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add a gray background color with some padding */
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        /* Header/Blog Title */
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+            margin-top: 20px;
+        }
+        @media screen and (max-width: 800px) {
+
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>My Blog</h2>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>What is DOM and what is the purpose of DOM?</h2>
+                <h5>Feb 18, 2023</h5>
+                <p>DOM..</p>
+                <p>The DOM is a programming interface that enables programs to access and modify web documents. It uses nodes and objects
+                to represent the page, allowing programming languages to relate with the pages structure, style, and content.</p>
+            </div>
+            <div class="card">
+                <h2>How will you select HTML elements using DOM? Name the DOM methods?</h2>
+                <h5>April 01, 2022</h5>
+                <p>There are 5 methods of choosing elements in a Document Object Model (DOM)..</p>
+                <div>
+                    <ul>
+                        <li>getElementsByTagName()</li>
+                        <li>getElementsByClassName()</li>
+                        <li>getElementById()</li>
+                        <li>querySelector()</li>
+                        <li>querySelectorAll()</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <h2>What is event bubble?</h2>
+                <h5>Oct 18, 2022</h5>
+                <p>Event Bubble..</p>
+                <p>Event Bubbling is a process in the DOM where we can passed all the events through the element class order. When an element is generate by an event, it will pass the event up through its parent and rare elements in the DOM
+                tree until it gets to its higher level element.</p>
+            </div>
+            <div class="card">
+                <h2>What is a callback function and why will you use it?</h2>
+                <h5>Dec 01, 2022</h5>
+                <p>Call back function...</p>
+                <p>A callback is a function that is passed as an argument to another function, which is then executed by the outer function
+                to perform a specific task. Callback functions are necessary because many JavaScript tasks are not carried out in a linear fashion. Instead, it runs in the background while the main code is still running. The purpose of a callback is to run code in reply to a situation.</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Me</h2>
+                <p> I am a programmer who writes computer code to create programs, software, and websites. They are responsible for
+                writing the instructions that allow computers to perform tasks and functions. Programmers use computer languages such as
+                Java, HTML, CSS, and C++ to write code that instructs a computer how to carry out a specific task.</p>
+            </div>
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div>
+                    <ul>
+                        <li>What is DOM and what is the purpose of DOM?</li>
+                        <li>How will you select HTML elements using DOM? Name the DOM methods?</li>
+                        <li>What is event bubble?</li>
+                        <li>What is a callback function and why will you use it?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p><a href="https://web.facebook.com/nahian.siddique.5">Facebook</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Thank You</h2>
+    </div>
+
+</body>
+
+</html>
